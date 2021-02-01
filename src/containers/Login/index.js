@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "../../components/Header";
 
-const Home = () => {
+const Login = () => {
   return (
     <div>
       <Header />
-      <div>Home!!</div>
+      <div>Login!!</div>
       <button
         onClick={() => {
           alert("clicked");
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;
