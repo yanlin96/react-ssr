@@ -1,9 +1,13 @@
 import express from "express";
-import Home from "./containers/Home";
+import Home from "../containers/Home";
 import React from "react";
 import { renderToString } from "react-dom/server";
 
 const app = express();
+
+// 静态文件
+app.use(express.static("public"));
+
 const content = renderToString(<Home />);
 const port = 3000;
 
@@ -13,7 +17,10 @@ app.get("/", (req, res) => {
       <head>
         <title>ssr</title>
       </head>
-      <body>${content}</body>
+      <body>
+        <div id="root">${content}</div>
+      </body>
+      <script src="/index.js"></script>
     </html>    
   `);
 });
