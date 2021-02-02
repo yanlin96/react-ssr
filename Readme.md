@@ -21,3 +21,8 @@
    d. 客户端执行 componentDidMount 函数，列表数据更新
    e. store 的数据更新
    f. 客户端渲染出 store 中 list
+
+4. 本次的流程用语言记录，detail 的部分需要看文档。`任何静态的东西，我们都会考虑是不是应该放到配置相中，而不是放到逻辑代码里`
+   a. express 做为 proxy，保证浏览器不会直接跟我的 api 服务器通信，方便 debug
+   b. 通过创建 axios instance，来完成不通 api url 的请求
+   c. redux-thunk 可以添加自定义的参数，withExtraArgument（）方法
