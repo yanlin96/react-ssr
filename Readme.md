@@ -13,3 +13,11 @@
    d. 浏览器加载 js 文件
    e. js 中的代码在浏览器中运行
    f. js 中的代码接管界面操作（具体体现在，dom 事件的生效）
+
+3. 5-7 节课的笔记
+   a. 服务器接收到请求，store 为空
+   b. 服务器端不会执行 componetDidMount
+   c. 客户端运行，store 依然是空
+   d. 客户端执行 componentDidMount 函数，列表数据更新
+   e. store 的数据更新
+   f. 客户端渲染出 store 中 list
