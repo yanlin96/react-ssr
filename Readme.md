@@ -26,3 +26,14 @@
    a. express 做为 proxy，保证浏览器不会直接跟我的 api 服务器通信，方便 debug
    b. 通过创建 axios instance，来完成不通 api url 的请求
    c. redux-thunk 可以添加自定义的参数，withExtraArgument（）方法
+
+5. 这次用笔记的方式，记录要点，做框架，造轮子的时候需要考虑的问题
+   a. 服务器端的 404 和重定向是要在 express 里使用 res.status 来给出正确的 http code 的
+   b. 因为服务器端使用了 promise all，这里我们应该收集所有的 promise, 这里可以保证正确 call api 的数据照常显示
+   ```js
+   const promises = new Promise((resolve, reject) => {
+     item.route.loadData(store).then(resolve).catch(reject);
+     promises.push(item.route.loadData(store));
+   });
+   ```
+   c. css 的样式需要引入 一个专门的 loader, 利用 context 来整合。使用高阶组件来完善
